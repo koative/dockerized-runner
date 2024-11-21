@@ -42,12 +42,7 @@ docker build -t custom-github-runner .
 Run the container with the required environment variables:
 
 ```bash
-docker run -d --name github-runner \
-    -e REPO_URL="https://github.com/<username>/<repository>" \
-    -e RUNNER_TOKEN="<your_runner_token>" \
-    -e RUNNER_NAME="custom-runner" \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    custom-github-runner
+docker run -d --name github-runner -e REPO_URL="https://github.com/<username>/<repository>" -e RUNNER_TOKEN="<your_runner_token>" -e RUNNER_NAME="custom-runner" -v /var/run/docker.sock:/var/run/docker.sock custom-github-runner
 ```
 
 Replace the following:
